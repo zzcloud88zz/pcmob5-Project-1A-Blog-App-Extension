@@ -45,7 +45,8 @@ export default function SignInScreen({ navigation }) {
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <View style={styles.container}>
-        <Text style={styles.title}>Sign in to blog</Text>
+        <Text style={styles.title}>Welcome to Blog App!</Text>
+        <Text style={styles.title}>Sign in below!</Text>
         <Text style={styles.fieldTitle}>Username</Text>
         <TextInput
           style={styles.input}
@@ -68,6 +69,9 @@ export default function SignInScreen({ navigation }) {
           <Text style={styles.buttonText}>Log in</Text>
         </TouchableOpacity>
         <Text style={styles.errorText}>{errorText}</Text>
+        <TouchableOpacity onPress={() => navigation.navigate("SignUp")}>
+          <Text style={styles.buttonText}>Don't have an account? <Text style={{textDecorationLine: "underline", color: "blue"}}>Sign up here!</Text></Text>
+        </TouchableOpacity>
       </View>
     </TouchableWithoutFeedback>
   );
@@ -80,9 +84,10 @@ const styles = StyleSheet.create({
     padding: 24,
   },
   title: {
-    fontSize: 36,
+    fontSize: 30,
     fontWeight: "bold",
     marginBottom: 24,
+    textAlign: "center",
   },
   fieldTitle: {
     fontSize: 18,
@@ -98,15 +103,15 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
   },
   loginButton: {
-    backgroundColor: "blue",
-    width: 120,
+    backgroundColor: "hotpink",
+    width: "60%",
     alignItems: "center",
     padding: 18,
     marginTop: 12,
     marginBottom: 36,
   },
   buttonText: {
-    color: "white",
+    color: "black",
     fontWeight: "bold",
     fontSize: 18,
   },
