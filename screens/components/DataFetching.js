@@ -18,7 +18,7 @@ export default function DataFetching({ navigation }) {
       .catch(error => {
         console.log(error)
       })
-    }, [])
+    })
 
     return (
         <View>
