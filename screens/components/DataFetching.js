@@ -6,7 +6,7 @@ import axios from "axios";
 const API = "https://zzcloud88zz.pythonanywhere.com";
 const API_ALLPOSTS = "/posts";
 
-export default function DataFetching() {
+export default function DataFetching({ navigation }) {
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
@@ -23,12 +23,14 @@ export default function DataFetching() {
     return (
         <View>
             {posts.map(post => (
-              <Text key={post.id} style={styles.list}>
-                Post {post.id}.   {post.title}
-                <TouchableOpacity onPress={() => deletePost(post.id)} style={{paddingLeft: 50}}>
-                  <AntDesign name="delete" size={30} color="maroon" />
-                </TouchableOpacity>
-              </Text>
+              <TouchableOpacity onPress={() => navigation.navigate("showPost", post)}>
+                <Text key={post.id} style={styles.list}>
+                  Post {post.id}.   {post.title}
+                  <TouchableOpacity onPress={() => deletePost(post.id)} style={{paddingLeft: 80}}>
+                    <AntDesign name="delete" size={30} color="maroon" />
+                  </TouchableOpacity>
+                </Text>
+              </TouchableOpacity>
             ))}
         </View>
     )

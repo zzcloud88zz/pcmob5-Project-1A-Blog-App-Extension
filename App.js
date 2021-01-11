@@ -5,6 +5,8 @@ import SignInScreen from "./screens/SignInScreen";
 import SignUpScreen from "./screens/SignUpScreen";
 import AccountScreen from "./screens/AccountScreen";
 import CreateScreen from "./screens/CreateScreen";
+import ShowScreen from "./screens/ShowScreen";
+import EditScreen from "./screens/EditScreen";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -38,6 +40,8 @@ export default function App() {
         <Stack.Screen component={SignInScreen} name="SignIn" options={{ headerShown: false }}/>
         <Stack.Screen component={SignUpScreen} name="SignUp" options={{ title: 'Sign Up' }}/>
         <Stack.Screen component={CreateScreen} name="createPost" options={{ title: 'Create Post' }}/>
+        <Stack.Screen component={ShowScreen} name="showPost" options={{ title: 'Your Post' }}/>
+        <Stack.Screen component={EditScreen} name="editPost" options={{ title: 'Edit Post' }}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

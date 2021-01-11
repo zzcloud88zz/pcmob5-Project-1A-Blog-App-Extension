@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Button, StyleSheet, Text, View, TouchableOpacity, FlatList } from "react-native";
+import { Button, StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { commonStyles } from "../styles/commonStyles";
 import { Entypo } from '@expo/vector-icons';
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -30,9 +30,10 @@ export default function AccountScreen({ navigation }) {
   // Listview of posts
   return (
     <View style={styles.container}>
-      <DataFetching />
+      <DataFetching navigation={navigation} />
       <Button title="Sign out" onPress={signOut} />
     </View>
+    
   );
 
   // Signout function
